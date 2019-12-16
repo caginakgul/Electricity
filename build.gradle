@@ -20,6 +20,8 @@ buildscript {
         rxkotlin_version = "2.3.0"
 
         //Framework
+        retrofit_version = "2.5.0"
+        okhttp_version = "3.12.1"
         timber_version = "4.7.1"
         gson_version = "2.8.5"
         dagger_version = "2.24"

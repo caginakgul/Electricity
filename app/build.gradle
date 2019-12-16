@@ -49,15 +49,21 @@ dependencies {
     //RX
     implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
 
+    // Network
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version") {
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
     // Dependency Management
     implementation "com.google.dagger:dagger:$rootProject.dagger_version"
     kapt "com.google.dagger:dagger-compiler:$rootProject.dagger_version"
     implementation "com.google.dagger:dagger-android:$rootProject.dagger_version"
     implementation "com.google.dagger:dagger-android-support:$rootProject.dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
-
-    //Parser
-    implementation "com.google.code.gson:gson:$gson_version"
 
     //Test
     testImplementation "junit:junit:$junit_version"
