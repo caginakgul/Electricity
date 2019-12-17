@@ -3,25 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/layout_margin_8"
+    android:layout_marginTop="@dimen/layout_margin_8">
+
     <TextView
         android:id="@+id/nameTextView"
+        style="@style/TextAppearanceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/text_view_margin_16"
+        android:layout_marginTop="@dimen/text_view_margin_16"
+        android:text="@string/project_name_info"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Repository Name" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/languageTextView"
+        style="@style/TextAppearanceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/text_view_margin_16"
+        android:layout_marginTop="@dimen/text_view_margin_8"
+        android:text="@string/language_info"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        tools:text="Repository Language" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+    <TextView
+        android:id="@+id/nameTextViewDynamic"
+        style="@style/TextAppearanceDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_view_margin_8"
+        app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
+        app:layout_constraintStart_toEndOf="@+id/nameTextView"
+        app:layout_constraintTop_toTopOf="@+id/nameTextView"
+        tools:text="Project Name" />
+
+    <TextView
+        android:id="@+id/languageTextViewDynamic"
+        style="@style/TextAppearanceDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_view_margin_8"
+        app:layout_constraintBottom_toBottomOf="@+id/languageTextView"
+        app:layout_constraintStart_toEndOf="@+id/languageTextView"
+        app:layout_constraintTop_toTopOf="@+id/languageTextView"
+        tools:text="Language" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,8 +27,8 @@ class RepositoryAdapter(
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         fun bind(repository: RepositoryDetails, clickListener: OnItemClickListener) {
-            itemView.nameTextView.text = repository.name
-            itemView.languageTextView.text = repository.language
+            itemView.nameTextViewDynamic.text = repository.name
+            itemView.languageTextViewDynamic.text = repository.language
             itemView.setOnClickListener { clickListener.onItemClicked(repository) }
         }
     }

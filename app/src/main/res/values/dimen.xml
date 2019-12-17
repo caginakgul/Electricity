@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins !-->
+    <dimen name="text_view_margin_8">8dp</dimen>
+    <dimen name="text_view_margin_16">16dp</dimen>
+    <dimen name="layout_margin_8">8dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_title">16sp</dimen>
+    <dimen name="text_description">12sp</dimen>
+</resources>
