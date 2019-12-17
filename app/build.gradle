@@ -51,12 +51,10 @@ dependencies {
 
     // Network
     implementation "com.google.code.gson:gson:$gson_version"
-    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version") {
-        exclude group: 'com.google.code.gson', module: 'gson'
-    }
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     // Dependency Management
     implementation "com.google.dagger:dagger:$rootProject.dagger_version"
