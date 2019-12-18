@@ -6,8 +6,8 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -26,13 +26,16 @@ class HttpModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(interceptors: Set<@JvmSuppressWildcards Interceptor>): OkHttpClient =
-        OkHttpClient.Builder()
+    fun provideOkHttpClient(): OkHttpClient {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
+        return OkHttpClient.Builder()
             .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
-            .addInterceptorSet(interceptors)
+            .addInterceptor(loggingInterceptor)
             .build()
+    }
 
     @Provides
     @Singleton
@@ -42,11 +45,6 @@ class HttpModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
-
-    private fun OkHttpClient.Builder.addInterceptorSet(interceptors: Set<@JvmSuppressWildcards Interceptor>): OkHttpClient.Builder {
-        interceptors.forEach { addInterceptor(it) }
-        return this
-    }
 
     companion object {
         const val TIME_FORMAT_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

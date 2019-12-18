@@ -29,19 +29,26 @@ android {
             debuggable true
         }
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    //Androidx
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Androidx
     implementation "androidx.appcompat:appcompat:$androidx_version"
     implementation "androidx.core:core-ktx:$androidx_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation "androidx.cardview:cardview:$card_view_version"
     implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$saved_state_version"
+
+    //Material
+    implementation "com.google.android.material:material:$material_version"
 
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
@@ -51,12 +58,10 @@ dependencies {
 
     // Network
     implementation "com.google.code.gson:gson:$gson_version"
-    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version") {
-        exclude group: 'com.google.code.gson', module: 'gson'
-    }
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     // Dependency Management
     implementation "com.google.dagger:dagger:$rootProject.dagger_version"
