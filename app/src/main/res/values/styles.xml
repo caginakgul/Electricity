@@ -9,6 +9,12 @@
     </style>
 
     <!-- Text -->
+    <style name="TextAppearanceHeader">
+        <item name="android:textSize">@dimen/text_header</item>
+        <item name="android:textColor">@color/text_title</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
     <style name="TextAppearanceTitle">
         <item name="android:textSize">@dimen/text_title</item>
         <item name="android:textColor">@color/text_title</item>

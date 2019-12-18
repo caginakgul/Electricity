@@ -5,7 +5,11 @@
     <dimen name="text_view_margin_16">16dp</dimen>
     <dimen name="layout_margin_8">8dp</dimen>
 
+    <!-- Padding !-->
+    <dimen name="bottom_sheet_padding_24">24dp</dimen>
+
     <!-- Text Sizes -->
+    <dimen name="text_header">24sp</dimen>
     <dimen name="text_title">16sp</dimen>
     <dimen name="text_description">12sp</dimen>
 </resources>

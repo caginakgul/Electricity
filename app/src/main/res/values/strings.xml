@@ -3,4 +3,8 @@
 
     <string name="project_name_info">Project Name:</string>
     <string name="language_info">Language:</string>
+    <string name="issue_count_info">Number of Issues:</string>
+    <string name="star_count_info">Number of Starts:</string>
+    <string name="url_info">Url:</string>
+    <string name="id_info">Id:</string>
 </resources>
