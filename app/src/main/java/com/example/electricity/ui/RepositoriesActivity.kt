@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.electricity.R
 import com.example.electricity.base.BaseActivity
 import com.example.electricity.network.data.RepositoryDetails
+import com.example.electricity.ui.details.RepositoryDetailsBottomSheet
 import kotlinx.android.synthetic.main.activity_repositories.*
 import timber.log.Timber
 import javax.inject.Inject
@@ -18,6 +19,7 @@ class RepositoriesActivity : BaseActivity(), OnItemClickListener {
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: RepositoriesViewModel
     override var contentViewId = R.layout.activity_repositories
+    private val bottomSheetTag: String = "BottomSheet"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,8 @@ class RepositoriesActivity : BaseActivity(), OnItemClickListener {
     }
 
     override fun onItemClicked(repo: RepositoryDetails) {
-        //TODO display repo object in detailsBottomSheetFragment
+        RepositoryDetailsBottomSheet.newInstance(repo)
+            .show(supportFragmentManager, bottomSheetTag)
     }
 
     private fun fetchRepositoryData() = viewModel.getNewsData().observe(this, Observer { repositoryList -> repositoryList?.let { displayRepositories(it) } })
